@@ -15,8 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const minutesEl = document.getElementById("minutes");
     const wheelEl = document.getElementById("seconds-wheel");
 
+    // Responsive wheel radius calculation
+    function getWheelRadius() {
+        const vw = window.innerWidth;
+        if (vw <= 360) return 180;
+        if (vw <= 480) return 250;
+        if (vw <= 768) return 350;
+        if (vw <= 1024) return 500;
+        return 700;
+    }
+
+    let radius = getWheelRadius();
     const totalNumbers = 60;
-    const radius = 700; // Large radius for subtle curve
     const numbersArray = [];
 
     // Initialize wheel numbers
@@ -32,6 +42,19 @@ document.addEventListener("DOMContentLoaded", () => {
         wheelEl.appendChild(numEl);
         numbersArray.push(numEl);
     }
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const newRadius = getWheelRadius();
+        if (newRadius !== radius) {
+            radius = newRadius;
+            // Update all wheel numbers with new radius
+            numbersArray.forEach((numEl, i) => {
+                let angleDeg = i * -6;
+                numEl.style.transform = `rotate(${angleDeg}deg) translateX(-${radius}px)`;
+            });
+        }
+    });
 
     function updateOpacities(currentSec) {
         for (let i = 0; i < totalNumbers; i++) {
