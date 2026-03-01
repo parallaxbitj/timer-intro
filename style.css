@@ -12,9 +12,14 @@ body {
     background-color: #000;
 }
 
+@font-face {
+    font-family: 'HarryP';
+    src: url('HARRYP__.TTF') format('truetype');
+}
+
 body {
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'HarryP', 'Roboto', sans-serif;
 }
 
 #main-timer-container {
@@ -416,7 +421,7 @@ body {
     height: 100vh;
     background-color: var(--bg-color);
     color: white;
-    font-family: 'Syncopate', sans-serif;
+    font-family: 'HarryP', 'Syncopate', sans-serif;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -465,7 +470,7 @@ body {
 }
 
 .click-instruction {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'HarryP', 'Roboto', sans-serif;
     font-weight: 300;
     letter-spacing: 3px;
     font-size: 0.8rem;
