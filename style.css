@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 5, 20, 0.4);
+    z-index: 1;
+}
+
+.main-layout {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    /* Left and center layout */
+    display: flex;
+}
+
+.left-panel {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    /* offset from logo */
+    width: 50%;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.countdown-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.time-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.time-block .number {
+    font-size: 5.5rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.time-block .label {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.wheel-anchor {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+/* Base styling for sec-label removed as it shares standard .label styling now */
+
+.seconds-wheel {
+    position: absolute;
+    /* Translate the wheel center far to the right by the exact radius */
+    left: 700px;
+    /* Y alignment */
+    top: 0;
+    width: 0;
+    height: 0;
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.wheel-number {
+    position: absolute;
+    /* center relative to 0x0 of the wheel */
+    top: -45px;
+    left: -40px;
+    width: 80px;
+    height: 90px;
+    font-size: 5.5rem;
+    font-weight: 500;
+    line-height: 90px;
+    text-align: center;
+    transform-origin: 40px 45px;
+    opacity: 0.1;
+    /* default */
+    transition: opacity 0.3s;
+}
+
+.welcome-section {
+    margin-bottom: 40px;
+}
+
+.welcome-section h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+}
+
+.welcome-section p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    font-weight: 300;
+}
+
+.copyright a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}

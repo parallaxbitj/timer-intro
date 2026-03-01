@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERA Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <video autoplay muted loop playsinline id="background-video">
+        <source src="Cinematic_Dark_Fantasy_Futuristic_Video.mp4" type="video/mp4">
+    </video>
+    <div class="background-overlay"></div>
+
+    <main class="main-layout">
+        <!-- Logo Left -->
+        <aside class="left-panel">
+            <div class="logo">
+                <i class="fa-solid fa-stopwatch"></i>
+                <span class="logo-text">ERA</span>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <section class="center-content">
+            <p class="subtitle">Time Left Until Launching...</p>
+
+            <div class="countdown-container">
+                <div class="time-block">
+                    <span class="number" id="days">00</span>
+                    <span class="label">DAYS</span>
+                </div>
+                <div class="time-block">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">HOURS</span>
+                </div>
+                <div class="time-block">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">MIN</span>
+                </div>
+                <!-- The seconds digit is handled by the wheel -->
+                <div class="time-block">
+                    <div class="number wheel-anchor">
+                        <span style="visibility: hidden;">00</span>
+                        <div class="wheel-center">
+                            <div class="seconds-wheel" id="seconds-wheel"></div>
+                        </div>
+                    </div>
+                    <span class="label">SEC</span>
+                </div>
+            </div>
+
+            <div class="welcome-section">
+                <h2>Welcome!</h2>
+                <p>We are happy to see You, our site is almost ready.<br>
+                    Please, come back later and we'll surprise you!</p>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <p class="copyright">&copy; 2026.Technical Committee. An Initiative of Mayaverse</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
